@@ -1,0 +1,20 @@
+
+@notepad++
+
+echo "# Notepad-" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/AbrahaoNetoDev/Notepad-.git
+git push -u origin main
+
+Curso csharp
+
+echo "# Curso-csharp" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/AbrahaoNetoDev/Curso-csharp.git
+git push -u origin main
