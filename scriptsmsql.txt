@@ -1,0 +1,75 @@
+
+INSERT INTO carros(Id, Nome_Carro, TiposCarroId, CoresCarroId, VendaCarroId, CreateAt, UpdateAt)
+VALUES(UUID_TO_BIN(UUID()), 'Asus Rog', 90000.00, '2020-12-20'),
+'created_at' => date('Y-m-d H:i:s');
+
+INSERT INTO tipos_carro(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'HATCH', '2020-12-20 20:20:10', '2020-12-20 20:20:10');
+INSERT INTO tipos_carro(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'PICK-UP', '2021-12-20 20:20:10', '2021-12-20 20:20:10');
+INSERT INTO tipos_carro(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'SUV', '2019-12-20 20:20:10', '2019-12-20 20:20:10');
+
+INSERT INTO cores(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'Branco', '2018-12-20 20:20:10', '2020-12-20 20:20:10');
+INSERT INTO cores(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'Presto', '2001-12-20 20:20:10', '2021-12-20 20:20:10');
+INSERT INTO cores(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'Vermelho', '2019-12-20 20:20:10', '2019-12-20 20:20:10');
+INSERT INTO cores(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'Azul', '2010-12-20 20:20:10', '2019-12-20 20:20:10');
+delete from tipos_carro where Id='a824692a-d87c-11ec-8b0c-0a0027000014';
+
+select * from cores;
+
+select * from tipos_carro;
+
+INSERT INTO carros(Id, Nome_Carro, TiposCarroId, CoresCarroId, VendaCarroId, CreateAt, UpdateAt)
+VALUES(UUID(), 'Hillux', '465c4cfa-d87c-11ec-8b0c-0a0027000014', 'a8229ff9-d87c-11ec-8b0c-0a0027000014', null, '2018-12-20 20:20:10', '2020-12-20 20:20:10');
+
+INSERT INTO tipos_carro(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'HATCH', '2020-12-20 20:20:10', '2020-12-20 20:20:10');
+INSERT INTO tipos_carro(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'PICK-UP', '2021-12-20 20:20:10', '2021-12-20 20:20:10');
+INSERT INTO tipos_carro(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'SUV', '2019-12-20 20:20:10', '2019-12-20 20:20:10');
+INSERT INTO tipos_carro(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'SEDAN', '2019-12-20 20:20:10', '2019-12-20 20:20:10');
+
+select * from tipos_carro;
+
+INSERT INTO cores(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'Branco', '2018-12-20 20:20:10', '2020-12-20 20:20:10');
+INSERT INTO cores(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'Presto', '2001-12-20 20:20:10', '2021-12-20 20:20:10');
+INSERT INTO cores(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'Vermelho', '2019-12-20 20:20:10', '2019-12-20 20:20:10');
+INSERT INTO cores(Id, Descricao, CreateAt, UpdateAt)
+VALUES(UUID(), 'Azul', '2010-12-20 20:20:10', '2019-12-20 20:20:10');
+
+select * from cores;
+INSERT INTO carros(Id, Nome_Carro, TiposCarroId, CoresCarroId, CreateAt, UpdateAt)
+VALUES(UUID(), 'Hb20', '1863d3fe-db78-11ec-8b0c-0a0027000014', '328ccf27-db78-11ec-8b0c-0a0027000014','2019-12-20', '2020-12-20');
+INSERT INTO carros(Id, Nome_Carro, TiposCarroId, CoresCarroId, CreateAt, UpdateAt)
+VALUES(UUID(), 'Honda Civic', '1865cf8a-db78-11ec-8b0c-0a0027000014', '328c2aca-db78-11ec-8b0c-0a0027000014','2019-12-20', '2020-12-20');
+INSERT INTO carros(Id, Nome_Carro, TiposCarroId, CoresCarroId, CreateAt, UpdateAt)
+VALUES(UUID(), '3008', '18653fb2-db78-11ec-8b0c-0a0027000014', '328b7209-db78-11ec-8b0c-0a0027000014','2019-12-20', '2020-12-20');
+INSERT INTO carros(Id, Nome_Carro, TiposCarroId, CoresCarroId, CreateAt, UpdateAt)
+VALUES(UUID(), 'Hillux', '18649c54-db78-11ec-8b0c-0a0027000014', '328d6e0f-db78-11ec-8b0c-0a0027000014','2019-12-20', '2020-12-20');
+
+select * from carros;
+
+INSERT INTO vendas_carro(Id, Data_Venda_Carro, Valor_Venda_Carro, Ativo_Venda_Carro, CarrosId, CreateAt, UpdateAt)
+VALUES(UUID(), '2021-12-20 20:20:10', 2000299.01, 1, '20865937-db79-11ec-8b0c-0a0027000014', '2019-12-20', '2020-12-20');
+INSERT INTO vendas_carro(Id, Data_Venda_Carro, Valor_Venda_Carro, Ativo_Venda_Carro, CarrosId, CreateAt, UpdateAt)
+VALUES(UUID(), '2010-12-20 20:20:10', 710937.01, 1, '2086e762-db79-11ec-8b0c-0a0027000014', '2019-12-20', '2020-12-20');
+INSERT INTO vendas_carro(Id, Data_Venda_Carro, Valor_Venda_Carro, Ativo_Venda_Carro, CarrosId, CreateAt, UpdateAt)
+VALUES(UUID(), '2009-12-20 20:20:10', 392772.01, 1, '20877412-db79-11ec-8b0c-0a0027000014', '2019-12-20', '2020-12-20');
+INSERT INTO vendas_carro(Id, Data_Venda_Carro, Valor_Venda_Carro, Ativo_Venda_Carro, CarrosId, CreateAt, UpdateAt)
+VALUES(UUID(), '2001-12-20 20:20:10', 298364.01, 1, '2087d5d8-db79-11ec-8b0c-0a0027000014', '2019-12-20', '2020-12-20');
+INSERT INTO vendas_carro(Id, Data_Venda_Carro, Valor_Venda_Carro, Ativo_Venda_Carro, CarrosId, CreateAt, UpdateAt)
+VALUES(UUID(), '2022-12-20 20:20:10', 3874656.01, 1, 'a73bed42-db78-11ec-8b0c-0a0027000014', '2019-12-20', '2020-12-20');
+
+select * from vendas_carro;
+
+

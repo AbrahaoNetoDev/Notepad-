@@ -1,0 +1,11 @@
+Comandos Entity Framework 
+
+
+Criar a Migration:
+dotnet ef migrations add InitialCreate
+
+Mandar a migration para o Banco de dados:
+dotnet ef database update
+
+remove a migrations:
+dotnet ef migrations remove

@@ -1,0 +1,18 @@
+        public int Id_Venda { get; set; }
+        public DateTime Data_Venda_Carro { get; set; }
+        public Decimal Valor_Venda_Carro { get; set; }
+        public byte Ativo_venda { get; set; }
+        public int Id_Carro { get; set; }
+		
+		
+		 public int Id_Carro { get; set; }
+        public string Nome_Carro { get; set; }
+        public string Cor_Carro { get; set; }
+        public int Id_Tipo_Carro { get; set; }
+		
+		
+		public int Id_Tipo_Carro { get; set; }
+        public string Descricao { get; set; }
+		
+		
+		

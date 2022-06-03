@@ -1,0 +1,302 @@
+OVERVIEW DE TUDO QUE ESTOU USANDO:
+
+
+ Domain-Driven Design (DDD) - Design orientado por domínio
+
+
+Quando se fala em Domain-Driven Design (DDD), logo se pensa no modelo arquitetural, nos building blocks do DDD e nos design patterns relacionados.
+
+E é claro que nós somos apaixonados por isso, afinal somos desenvolvedores! ❤️
+
+Porém, para trabalhar com DDD precisamos desenvolver mais alguns skills, como aprender a modelar domínios de forma efetiva, e, para isso, precisamos nos tornar o que o Eric Evans
+ chama de Knowledge Crunchers — processadores de conhecimento — alguém preparado para receber, filtrar e organizar uma avalanche de informação.
+
+Domain-Driven Design é, antes de tudo, comunicação. No DDD modelagem e implementação andam juntas.
+
+Especialistas do domínio (usuários, analistas e outros especialistas da área), juntamente com os desenvolvedores e arquitetos trabalham de mãos dadas com um objetivo em comum:
+ construir software guiado pelo domínio para atender as necessidades do cliente.
+
+Para fazer isso, em primeiro lugar, é necessário que todos usem uma linguagem em comum e que não haja tradução na comunicação entre os membros do time.
+
+O time desenvolve, portanto, uma linguagem ubíqua (geral e universal) que expressa o conhecimento dos especialistas de negócio para o modelo de domínio (para o código).
+
+O domínio pode ser tão complexo quanto os processos e dados que ele compreende.
+
+E O MODELO?
+
+Um modelo é, de acordo com Evans (2004, p. 2) “uma simplificação. É uma interpretação da realidade que abstrai os aspectos relevantes para resolver o problema em questão e ignorar 
+detalhes alheios a isto” (tradução livre).
+
+COM UM MODELO CONSEGUIMOS:
+
+Abstrair a complexidade do negócio através de uma representação simplificada do mesmo — um modelo.
+
+O modelo serve como algo comum e palpável a todos os membros do time, que, junto com a linguagem ubíqua, permite que todos possam participar ativamente da construção progressiva do
+ mesmo.
+ 
+O modelo (desde que feito corretamente) garante que aquilo que está sendo especificado é o que está sendo implementado.
+
+O modelo é o meio de comunicação usado pelo time. Graças ao vínculo entre o modelo e a implementação, os desenvolvedores podem falar na linguagem do software ao comunicarem-se com os
+ especialistas do domínio (sem ter que traduzir a mensagem).
+ 
+O modelo é o conhecimento destilado — é o modo como o time concorda em estruturar o conhecimento extraído do domínio.
+EVANS (2004)
+
+O modelo é evolutivo: A cada iteração entre especialistas de domínio e a equipe técnica, o modelo se torna mais profundo e expressivo, mais rico, e os desenvolvedores transferem essa
+ fonte de valor para o software.
+
+Assim, o modelo vai sendo gradualmente enriquecido com o expertise dos especialistas do domínio destilado pelos desenvolvedores, fazendo com que o time ganhe cada vez mais insight 
+sobre o negócio e que esse conhecimento seja transferido para o modelo (para o código) através dos blocos de construção do DDD.
+
+Quando novas regras de negócio são adicionadas e/ou regras existentes são alteradas ou removidas, a implementação é refatorada para refletir essas alterações do modelo no código.
+
+No final, o modelo (que em última instância será o software) vai expressar com riqueza de conhecimento o negócio.
+
+Como explica Evans (2004, p. 23) “DDD coloca um monte de conhecimento no modelo que reflete profundamente o domínio.
+
+Isso só é possível através da colaboração entre quem conhece o domínio e quem sabe criar software. 🤝
+
+E como o desenvolvimento é iterativo, essa colaboração continua durante todo o andamento do projeto.”
+
+Ou seja, o Domain-Driven Design nos leva a construir softwares guiados pelo conhecimento e modelagem do negócio antes de qualquer apelo por tecnologia.
+
+Obviamente para que possamos implementar o modelo de domínio com sucesso, precisamos de engenharia. 😎
+
+E, por isso, o DDD nos conduz através dos seus blocos de construção a utilizar alguns princípios de arquitetura e design patterns consagrados, entre eles destaco:
+
+Isolamento do domínio com arquitetura em camadas.
+
+Representação do modelo através de artefatos de software bem definidos (entities, value objects, services, factories, repositories, specs, modules, etc).
+
+Gerenciamento do ciclo de vida de objetos do domínio com aggregates.
+
+Demonstrarei na prática cada um deles nos próximos artigos desta série sobre Domain-Driven Design. Mas agora voltemos à teoria, pois é necessário antes ter um bom fundamento 
+se quisermos construir um modelo realmente efetivo.
+
+OS 5 INGREDIENTES DE UM MODELO EFETIVO:
+
+Vincular o modelo com a implementação: esse vínculo é feito desde o início, quando o modelo ainda é primitivo e será mantido até o fim. Esse vínculo é profundo, a implementação
+ deve= refletir 100% o modelo.
+ 
+Cultivar uma linguagem baseada no modelo: no início será necessário que os desenvolvedores e os domain experts entendam cada um os termos do outro, mas depois ambos falarão a 
+mesma linguagem, organizando as sentenças da comunicação numa estrutura consistente com o modelo e sem ambiguidades.
+
+Desenvolver um modelo rico em conhecimento: objetos têm dados e comportamentos associados. O modelo não deve ser apenas uma estrutura de dados (modelo anêmico), ele deve capturar o 
+conhecimento do domínio para resolver os problemas do domínio.
+
+Destilar o modelo: o modelo deve ser refinado. Assim como conceitos importantes devem ser adicionados, conceitos que não tem relevância devem ser removidos. A cada iteração o modelo
+ ficará mais rico e terá mais valor.
+ 
+Brainstorming e experimentação: a interação direta entre os desenvolvedores e domain experts, através de brainstormings e diagramas feitos na hora, transformam as discussões em 
+laboratórios do modelo, no qual diversas variações de experimentos podem ser exercitadas e o resultado pode ser usado se mostrar valor ou descartado caso contrário.
+EVANS (2004).
+
+
+
+
+
+
+O QUE É O ENTITY FRAMEWORK CORE? 
+
+
+
+Entity Framework Core (EF Core) é a versão mais recente do Entity Framework da Microsoft. Ele foi projetado para ser leve, extensível e para oferecer suporte ao desenvolvimento
+ de plataforma cruzada como parte da estrutura .NET Core da Microsoft.
+ Ele também foi projetado para ser mais simples de usar e oferecer melhorias de desempenho em relação às versões anteriores do Entity Framework.
+
+O EF Core é um mapeador relacional de objeto (ORM). O mapeamento objeto-relacional é uma técnica que permite aos desenvolvedores trabalhar com dados de maneira orientada a objetos, 
+realizando o trabalho necessário para mapear entre objetos definidos na linguagem de programação de um aplicativo e dados armazenados em fontes de dados relacionais .
+
+Por que usar um ORM? 
+
+
+A maioria das estruturas de desenvolvimento inclui bibliotecas que permitem o acesso a dados de bancos de dados relacionais por meio de estruturas de dados semelhantes a conjuntos
+ de registros. O exemplo de código a seguir ilustra um cenário típico em que os dados são recuperados de um banco de dados e armazenados em um ADO.NET DataTablepara que possam ser 
+ acessados ​​pelo código do programa:
+
+using(var conn = new SqlConnection(connectionString))
+using(var cmd = new SqlCommand("select * from Products", conn))
+{
+    var dt = new DataTable();
+    using(var da = new SqlDataAdapter(cmd))
+    {
+        da.Fill(dt);
+    }
+}
+Os dados dentro do DataTable são acessíveis por meio de indexadores numéricos ou de string e precisam ser convertidos objectpara o tipo correto:
+
+foreach(DataRow row in dt.Rows)
+{
+    int productId = Convert.ToInt32(row[0]);
+    string productName = row["ProductName"].ToString();
+}
+Essa abordagem de limite tardio ou "tipagem fraca" para acesso a dados é propensa a erros. Os problemas geralmente surgem da digitação incorreta do nome de uma coluna ou da 
+descoberta de que o nome da coluna foi alterado no banco de dados ou de uma alteração na ordem na qual os campos são especificados na instrução SQL sem que uma alteração 
+correspondente seja feita no código do aplicativo. Da mesma forma, as conversões de tipo de dados podem falhar. O código ainda será compilado, mas ocorrerá um erro em tempo
+ de execução. Consequentemente, os desenvolvedores profissionais preferem trabalhar com dados de maneira fortemente tipada.
+
+Digitação forte 
+Ao adotar uma abordagem fortemente tipada aos dados, você trabalha com propriedades de classes predefinidas que formam um modelo de domínio de forma orientada a objetos:
+
+public class Product
+{
+    int ProductId { get; set; }
+    string ProductName { get; set; }
+}
+int productId = myProduct.ProductId;
+string productName = myProduct.ProductName;
+O trabalho ainda precisa ser feito para recuperar e mapear os dados do banco de dados para uma instância do objeto de domínio. Uma opção é escrever seu próprio código para 
+gerenciar isso. No entanto, à medida que o modelo de domínio cresce, a quantidade de código necessária pode crescer e precisará de mais e mais tempo de desenvolvimento para 
+manter. Isso aumentará o tempo total necessário para concluir uma inscrição.
+
+ORMs são bibliotecas de código pré-escritas que fazem esse trabalho para você. Os ORMs completos também fazem muito mais. Eles podem
+mapear um modelo de domínio para objetos de banco de dados
+criar bancos de dados e manter o esquema alinhado com as alterações no modelo
+gerar SQL e executá-lo no banco de dados
+gerenciar transações
+manter o controle de objetos que já foram recuperados
+
+
+
+
+ORM OBJECT RELATIONAL MAPPER - MAPEADOR RELACIONAL DE OBJETOS
+
+
+ (Object Relational Mapper) é uma técnica de mapeamento objeto relacional que permite fazer uma relação dos objetos com os dados que os mesmos representam. Ultimamente
+ tem sido muito utilizada e vem crescendo bastante nos últimos anos.
+
+Este crescimento tem se dado principalmente pelo fato de muitos desenvolvedores não se sentirem a vontade em escrever código SQL e pela produtividade que esta técnica nos 
+proporciona. Existem ótimos ORM´s como Hibernate, NHibernate, Entity Framework e etc.
+
+
+No mundo relacional prevalecem princípios matemáticos com a finalidade de armazenar e gerenciar corretamente os dados, de forma segura e se trabalha com a linguagem SQL que 
+é utilizada para dizer o banco de dados “O QUE?” fazer e não como fazer.
+
+Já no mundo orientado a objetos trabalhamos com classes e métodos, ou seja, trabalhamos fundamentados na engenharia de software e seus princípios que nos dizem “COMO” fazer. 
+O ORM é justamente, a ponte entre estes dois mundos, ou seja, é ele quem vai permitir que você armazene os seus objetos no banco de dados.
+
+Para isto precisamos fazer um mapeamento dos seus objetos para as tabelas do banco de dados.
+
+banco de dados e cada ORM tem suas particularidades para gerar o SQL referente a inserção do objeto que corresponde a uma tabela no banco de dados e realizar a operação. 
+Utilizando um ORM, também se ganha produtividade, pois deixa-se de escrever os comando SQL para deixar que o próprio ORM, 
+faça isto por você.
+
+
+
+
+
+SQL STANDARD QUERY LANGUAGE - LINGUAGEM DE CONSULTA PADRÃO:
+
+SQL é uma linguagem padrão para trabalhar com bancos de dados relacionais. Ela é uma linguagem declarativa e que não necessita de profundos conhecimentos de programação para que 
+alguém possa começar a escrever queries, as consultas e pedidps, que trazem resultados de acordo com o que você está buscando. SQL significa Standard Query Language, literalmente
+ a linguagem padrão para realizar queries.
+
+A linguagem SQL é utilizada de maneira relativamente parecida entre os principais bancos de dados relacionais do mercado: Oracle, MySQL, MariaDB, PostgreSQL, Microsoft SQL Server,
+ entre muitos outros. Cada um tem suas características, sendo o MySQL e o PostgreSQL extremamente populares por possuírem versões gratuitas e de código aberto.
+
+É também uma linguagem que muitos profissionais acabam precisando aprender: seja quem usa Excel de forma pesada e acaba migrando as informações para um banco de dados, seja um 
+cientista de dados que usa Python para agregar os dados das diferentes fontes de informações.
+
+Quais são os principais comandos SQL?
+Os principais comandos SQL são:
+
+SELECT: busca linhas em tabelas de acordo com um critério definido dentro da chamada cláusula de WHERE
+
+INSERT: insere novas linhas na tabela. no nosso caso, colocaria novas notas fiscais dado os argumentos que são passados para o INSERT. Por exemplo, no nosso caso: INSERT INTO nf 
+(titulo, pagamento, valor) VALUES 'canetas',
+ '2019-07-15', 150.
+ 
+UPDATE: atualiza linhas do banco de dados de acordo com um critério de WHERE, como mudar o CPF
+
+DELETE: remove linhas da tabela de acordo com um critério.
+
+Há ainda uma infinidade de subcomandos para fazer buscas melhores e mais elaboradas, como JOIN, LIKE, HAVING e GROUP BY.
+
+Não se assuste! O trabalho básico com tabelas, linhas, colunas, relacionamentos e chaves não demanda um conhecimento extenso de SQL. Ele vai se fazer necessário para otimizar 
+consultas e tomar decisões de como modelar esses dados.
+
+DQL - Linguagem de Consulta de Dados - Define o comando utilizado para que possamos consultar (SELECT) os dados armazenados no banco;
+
+DML - Linguagem de Manipulação de Dados - Define os comandos utilizados para manipulação de dados no banco (INSERT, UPDATE e DELETE);
+
+DDL - Linguagem de Definição de Dados - Define os comandos utilizados para criação (CREATE) de tabelas, views, índices, atualização dessas estruturas (ALTER), assim como a 
+remoção (DROP);
+
+DCL - Linguagem de Controle de Dados - Define os comandos utilizados para controlar o acesso aos dados do banco, adicionando (GRANT) e removendo (REVOKE) permissões de acesso;
+
+DTL - Linguagem de Transação de Dados - Define os comandos utilizados para gerenciar as transações executadas no banco de dados, como iniciar (BEGIN) uma transação, 
+confirmá-la (COMMIT) ou desfazê-la (ROLLBACK).
+
+
+
+
+SQL DQL - DATA QUERY LANGUAGE - LINGUAGEM DE CONSULTA DE DADOS
+
+
+Como você já pode notar e verificará ao longo da sua carreira, uma das tarefas mais corriqueiras em bancos de dados é a execução de queries. Portanto, saber criá-las da melhor 
+maneira é muito importante para 
+o desempenho do banco e de aplicações que dele dependam.
+
+Neste momento, de primeiros passos, você não precisa se preocupar tanto com isso, mas recomendamos que pense sobre esse assunto a cada novo recurso relacionado a consultas que estudar.
+
+O curso abaixo lhe ensinará a criar consultas em SQL, a utilizar o comando SELECT. Conheceremos, assim, alguns dos principais recursos, por exemplo: ordenação de registros, funções de
+ agregação, junções, entre outros.
+ 
+ SQL DML - Data Manipulation Language
+Para a manipulação de dados no banco, temos como comandos da linguagem SQL o INSERT, UPDATE e DELETE, os quais inserem, atualizam e removem dados, respectivamente.
+
+
+
+
+
+O QUE É O ANGULAR?
+
+
+É um framework JavaScript de código aberto mantido pela Google para a construção de SPA (sigla para Single Page Applications ou Aplicações de Página Única). Resumidamente, uma SPA é
+ basicamente uma aplicação web construída em uma só página, na qual a interação e a navegação entre as sessões de uma página ocorrem de maneira a qual não é necessário recarregar a
+ página em cada uma dessas mudanças.
+
+Sua finalidade é nos dar ferramentas necessárias para criação de aplicações SPA, além disso também deixa o desenvolvimento deste tipo de aplicação mais simples e otimizado. Com ele,
+ podemos desenvolver aplicações web voltadas tanto para resoluções desktop quanto para resoluções mobile, tornando-as dinâmicas, modernas e escaláveis.
+
+Com o Angular, temos um novo paradigma de desenvolvimento focado nos dados da aplicação. Ele não utiliza uma virtualização do DOM para manipulá-lo: ele utiliza mecanismos próprios de
+ detecção de alterações na interface, alterações tas disparadas principalmente por uma estrutura chamada Two-Way Data Binding.
+
+O Two-Way Data Binding mantém o model e a view sempre atualizados entre si, ou seja: sempre que algum model é atualizado, essa alteração se reflete automaticamente na view.
+
+AngularJS ou somente Angular?
+Provavelmente, você já ouviu falar de Angular e AngularJS e pode ter ficado em dúvida se é a mesma tecnologia, porque que uma tem “JS” no nome e a outra não. A resposta é: embora o
+ Angular seja a evolução após o AngularJS, eles praticamente são frameworks diferentes.
+
+O AngularJS começou em 2009, sendo definido pelas versões 1.x. Já o Angular (antes conhecido como “Angular 2”, publicado em 2016) é considerado a versão 2 mais as versões superiores.
+ Muitos pensam que o Angular é uma continuação do AngularJS em termos de código, o que não é verdade.
+
+A versão 2, chamada hoje somente de Angular, foi uma reescrita completa do código e tornou-se uma arquitetura completamente diferente, mantendo apenas o nome – porém sem o JS no final.
+ Nesta nova ferramenta, foram seguidos padrões da web moderna, técnicas e boas práticas que foram aprendidas com os erros cometidos no desenvolvimento da ferramenta anterior.
+
+O AngularJS tinha como linguagem padrão o JavaScript. Já o Angular ainda continua baseado no JavaScript, mas através do TypeScript. Com isso, ele passou a oferecer capacidades 
+interessantes antes oferecidas somente pelo TypeScript.
+
+Características
+Suas principais características são:
+
+• Suporte cross-platform: esse framework fornece suporte a múltiplas plataformas de desenvolvimento. O Angular pode ser utilizado para criar aplicações web SPA, aplicações mobile 
+(com o suporte do Ionic, por exemplo) ou até mesmo aplicações desktop (com o suporte do Electron).
+
+Mesmo em ambientes distintos, a API do Angular permanece praticamente a mesma, o que facilita a curvatura de adoção e aprendizagem em múltiplos ambientes de desenvolvimento;
+
+• Integração e suporte à todas as fases de desenvolvimento: provê ferramental e suporte para todas as fases de desenvolvimento, desde a escrita do código em si (apoiando-se bastante 
+na API e no sistema de tipos do TypeScript) até a criação de fluxos de teste (com o apoio principalmente do Karma – uma biblioteca para escrita de testes JavaScript), passando pelo
+ suporte excelente à criação de animações, o provisionamento de estruturas de acessibilidade e até mesmo o scaffolding de projetos através do Angular CLI;
+
+• Produtividade aliada à performance: consegue oferecer suporte ao desenvolvimento rápido de aplicações através de uma API simples, bem estruturada e bem documentada, o que acaba 
+trazendo bastante produtividade.
+
+Por fim, por mais que o Angular não utilize o conceito de Virtual DOM (conceito utilizado por outros frameworks, como o React), ainda sim o Angular oferece uma performance bem 
+interessante, principalmente com a Ivy, a engine de renderização utilizada desde o Angular 6+.
+
+Mercado
+Atualmente o Angular é um dos frameworks Javascript que dominam o mercado, sendo muito popular nos últimos anos e é utilizado em inúmeros projetos. Por esses motivos, ele vem sendo 
+amplamente requisitado no mercado para desenvolvimento web e mobile, tendo diversas oportunidades no Brasil e no mundo.
+
+

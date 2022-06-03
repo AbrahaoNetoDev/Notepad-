@@ -1,0 +1,4 @@
+
+No visual Studio
+
+Para rodar um projeto .Net sempre tem que setar como projeto principal que vai ser exibido na tela, e o que sempre esta setado é mais destacado.
