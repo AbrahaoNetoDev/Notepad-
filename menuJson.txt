@@ -1,0 +1,84 @@
+0: {id: 129, subMenuId: null, displayName: 'Maintenance', level: 0, url: '/Maintenance', children: [
+	0: {id: 142, subMenuId: null, displayName: 'Carrier', level: 0, url: '/Carrier', orderBy: 0, children: []}
+    1: {id: 143, subMenuId: null, displayName: 'Tower Company', level: 0, url: '/TowerCompany', orderBy: 0, children: []}
+    2: {id: 144, subMenuId: null, displayName: 'Site', level: 0, url: '/Site', orderBy: 0, children: []}
+    3: {id: 137, subMenuId: null, displayName: 'Request Type', level: 0, url: '/RequestType', orderBy: 0, children: []}
+    4: {id: 136, subMenuId: null, displayName: 'Technical Activities', level: 0, url: '/TechnicalActivities', orderBy: 0, children: []}
+    5: {id: 145, subMenuId: null, displayName: 'Technical Activity Types', level: 0, url: '/TechnicalActivityTypes', orderBy: 0, children: []}
+    6: {id: 146, subMenuId: null, displayName: 'Execution Type', level: 0, url: '/ExecutionType', orderBy: 0, children: []}
+    7: {id: 140, subMenuId: null, displayName: 'Tower Company Template', level: 0, url: '/TowerCompanyTemplate', orderBy: 0, children: []}
+]},
+1: {id: 139, subMenuId: null, displayName: 'Access Request', level: 0, url: '/Request', orderBy: 2, children: []}
+
+
+
+
+"{ "Header"  : "ASK" , "Version"  : 1 ,"Action" : "Menu" , "Path" : ["GetMenuByApplicationInitialsAndProfile"], "query" : {"systemInitials":"DM-SA"}, "Token" : "YsM-wCC1ilr_s8ihFRS3ugb5IUI4yqP43cF7H-AMCs-C1lzl33U7TH6-qgZSDlkBhtaXTYukwCm5KRWXDl5wTvnFAwVsPOWXARj99vn-4Ty_s3qjENxE58aFNG3ycJFf95J__4YcTkPdgZfn9U914mRwgRhDJaa01bL7I6lA96jBPvyUVemyVvHuAlxIEUzAvi1wmTv3DvJwX9YX2NGi1NF7e6sQxw1sjlRP47fBEVGdj0Rjlr1u3HUpRVn3rozRQTLUqjzQ1V41bdx-nprnDXRBSEMdgN1q7SW3a-IYRE4nOusi4Q2RJGa0DHo5vM9Ovv1ydWkMArNJ6YekL8P0nRBJCYBlJ7sCnERi_kw3vCKp3pvTbR8766LCow0q0Q-Ua_cf54FQjVcwrh2kJr_iRSwMIh-CgrSarw86EcHeO6K2KpmqlkvBDoibIZOP-J3ajy3N8PYSdKCBVzfmZ_HL9IJKoQeJtuaAP9dgxNIZ5ffjS4QtTSfsw4vHCcwOV_jrG6uZwek04NM_1KQnO2-8nCRvLAqd6S4iA2CUoRKLpgW2r25lzAYcyNIgKRikNIosCEO7B_XS8RKI9erxX-kUS449ZRVdZTKwPoRj68RXgBIh_qKdXwhOV8c_gEpILg6qGLMGljO5vxfXZbvuArBPF8IuxN2mRw-FJPIrPFuvmSwFA2q7-wrHty5Y3T-Dpd2YtbUoWNfH3s9j6ZTqPyK4-qYzdi93U1sYyXpL33kvnxX603lSr3l8-_-pPfQmA8Swrx8Doer1QeMQiEWzBVpU8sdTZ2v3ZlF0SoyAzvPYlhvUtEvu4t796Go2LcJk_FhK-7yp-LdgVj3jb1c3nh1UIhjcd-P3oPfDleOWFhFlHc6yXK2mGJUcx7ehORewaCNIJalb3ieKNm7n82ylsS9KuYcslLW4o_W6V8qs1Zut7D-lcVos" }"
+
+
+"body":[
+ {"id":129,"subMenuId":null,"displayName":"Maintenance","level":0,"url":"/Maintenance","children":[ 
+ {"id":142,"subMenuId":null,"displayName":"Carrier","level":0,"url":"/Carrier","children":[],"orderBy":0},
+ {"id":143,"subMenuId":null,"displayName":"Tower Company","level":0,"url":"/TowerCompany","children":[],"orderBy":0},
+ {"id":144,"subMenuId":null,"displayName":"Site","level":0,"url":"/Site","children":[],"orderBy":0},
+ {"id":137,"subMenuId":null,"displayName":"Request Type","level":0,"url":"/RequestType","children":[],"orderBy":0},
+ {"id":136,"subMenuId":null,"displayName":"Technical Activities","level":0,"url":"/TechnicalActivities","children":[],"orderBy":0},
+ {"id":145,"subMenuId":null,"displayName":"Technical Activity Types","level":0,"url":"/TechnicalActivityTypes","children":[],"orderBy":0},
+ {"id":146,"subMenuId":null,"displayName":"Execution Type","level":0,"url":"/ExecutionType","children":[],"orderBy":0},
+ {"id":140,"subMenuId":null,"displayName":"Tower Company Template","level":0,"url":"/TowerCompanyTemplate","children":[],"orderBy":0}],"orderBy":1},
+ {"id":139,"subMenuId":null,"displayName":"Access Request","level":0,"url":"/Request","children":[],"orderBy":2}]
+
+
+jsonData: '{"body":[{"id":129,"subMenuId":null,"displayName":"Maintenance","level":0,"url":"/Maintenance"}]}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  menuMock: '{"body": [{"id":129, "subMenuId":null, "displayName":"Maintenance",  "level":0,  "url":"/Maintenance",  "children": [
+  {"id":142, "subMenuId":null, "displayName":"Carrier",                  "level":0, "url":"/Carrier",                  "children":[], "orderBy":0},
+  {"id":143, "subMenuId":null, "displayName":"Tower Company",            "level":0, "url":"/TowerCompany",             "children":[], "orderBy":0},
+  {"id":144, "subMenuId":null, "displayName":"Site",                     "level":0, "url":"/Site",                     "children":[], "orderBy":0},
+  {"id":137, "subMenuId":null, "displayName":"Request Type",             "level":0, "url":"/RequestType",              "children":[], "orderBy":0},
+  {"id":136, "subMenuId":null, "displayName":"Technical Activities",     "level":0, "url":"/TechnicalActivities",      "children":[], "orderBy":0},
+  {"id":145, "subMenuId":null, "displayName":"Technical Activity Types", "level":0, "url":"/TechnicalActivityTypes",   "children":[], "orderBy":0},
+  {"id":146, "subMenuId":null, "displayName":"Execution Type",           "level":0, "url":"/ExecutionType",            "children":[], "orderBy":0},
+  {"id":140, "subMenuId":null, "displayName":"Tower Company Template",   "level":0, "url":"/TowerCompanyTemplate",     "children":[], "orderBy":0}],
+  {"id":147, "subMenuId":null, "displayName":"Carros",                   "level":0, "url":"/Carros",                   "children":[], "orderBy":0},
+  {"id":148, "subMenuId":null, "displayName":"Cores",                    "level":0, "url":"/Cores",                    "children":[], "orderBy":0},
+  {"id":149, "subMenuId":null, "displayName":"TiposCarro",               "level":0, "url":"/TiposCarro",               "children":[], "orderBy":0},
+  {"id":150, "subMenuId":null, "displayName":"VendasCarro",              "level":0, "url":"/VendasCarro",              "children":[], "orderBy":0}],"orderBy":1},
+  {"id":139, "subMenuId":null, "displayName":"Access Request",           "level":0, "url":"/Request",                  "children":[], "orderBy":2}]}
+  
+  
+  
+  
+  menuMock: '{"body":[{"id":129,"subMenuId":null,"displayName":"Maintenance","level":0,"url":"/Maintenance","children":[
+  {"id":142, "subMenuId":null,"displayName":"Carrier","level":0,"url":"/Carrier","children":[],"orderBy":0},
+  {"id":143,"subMenuId":null,"displayName":"Tower Company","level":0,"url":"/TowerCompany","children":[],"orderBy":0},
+  {"id":144,"subMenuId":null,"displayName":"Site","level":0,"url":"/Site","children":[],"orderBy":0},
+  {"id":137,"subMenuId":null,"displayName":"Request Type","level":0,"url":"/RequestType","children":[],"orderBy":0},
+  {"id":136,"subMenuId":null,"displayName":"Technical Activities","level":0,"url":"/TechnicalActivities","children":[],"orderBy":0},
+  {"id":145,"subMenuId":null,"displayName":"Technical Activity Types","level":0,"url":"/TechnicalActivityTypes","children":[],"orderBy":0},
+  {"id":146,"subMenuId":null,"displayName":"Execution Type","level":0,"url":"/ExecutionType","children":[],"orderBy":0},
+  {"id":140,"subMenuId":null,"displayName":"Tower Company Template","level":0,"url":"/TowerCompanyTemplate","children":[],"orderBy":0}],
+  {"id":147,"subMenuId":null,"displayName":"Carros","level":0,"url":"/Carros","children":[], "orderBy":0},
+  {"id":148,"subMenuId":null,"displayName":"Cores","level":0,"url":"/Cores","children":[],"orderBy":0},
+  {"id":149,"subMenuId":null,"displayName":"TiposCarro","level":0,"url":"/TiposCarro","children":[], "orderBy":0},
+  {"id":150,"subMenuId":null,"displayName":"VendasCarro","level":0, "url":"/VendasCarro","children":[],"orderBy":0}],"orderBy":1},
+  {"id":139,"subMenuId":null,"displayName":"Access Request","level":0,"url":"/Request","children":[],"orderBy":2}]}'

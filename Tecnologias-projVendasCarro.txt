@@ -1,0 +1,42 @@
+
+Projeto de Sistema de vendas de carros - SysCar
+
+Utilizei o database só para armazenamento de dados não utilizando proc e nem outras tecnicas.
+
+No backend foi feito conceitos do DDD, em comunicação com front estou usando uma API com Swagger e autenticação com JWT. 
+
+No frontend estou utilizando o angular com template do angular material, frontend totalmente orientado a objetos e usando conceitos de componetização das telas.
+
+
+
+SOBRE O INEA
+
+
+O que é o Inea
+O Instituto Estadual do Ambiente (Inea) é uma entidade integrante da Administração Pública estadual indireta, vinculada à Secretaria de Estado do Ambiente e Sustentabilidade (SEAS). 
+Sua criação teve como objetivo tornar mais eficiente a preservação do meio ambiente do Estado do Rio de Janeiro, a partir da fusão de três órgãos: a Fundação Estadual de Engenharia de
+ Meio Ambiente (FEEMA), a Superintendência Estadual de Rios e Lagoas (SERLA) e o Instituto Estadual de Florestas (IEF).
+
+Criado pela Lei Estadual n° 5.101, de 4 de outubro de 2007, o Inea atua sob um regime autárquico especial, com autonomia administrativa, financeira e patrimonial. A instalação do 
+Instituto foi efetivada com a promulgação do Decreto Estadual n° 41.628, de 12 de janeiro de 2009, que estabeleceu a estrutura organizacional, a forma de organização e as competências 
+do órgão. O Decreto nº 46.619 de 02 de abril de 2019, publicado em 03 de abril de 2019, estabeleceu o novo regulamento e a estrutura organizacional do Inea.
+
+Compete ao Inea executar as políticas estaduais de meio ambiente, recursos hídricos e recursos florestais adotadas pelos poderes Executivo e Legislativo do Estado do Rio de Janeiro.
+ O Instituto integra o Sistema Nacional do Meio Ambiente (SISNAMA), o Sistema Nacional de Gerenciamento de Recursos Hídricos (SNGRH), o Sistema Estadual de Gerenciamento de Recursos 
+ Hídricos (SEGRH) e o Sistema Nacional de Unidades de Conservação (SNUC).
+
+O Inea orienta-se por um conjunto de normas de conduta que, manifestadas na missão, visão e valores do Instituto, determinam o seu comportamento funcional.
+
+Missão
+
+Proteger, conservar e recuperar o patrimônio ambiental do Estado do Rio de Janeiro, promovendo a agenda do desenvolvimento sustentável, atuando como um órgão gestor ambiental 
+de referência e exercendo um papel estratégico no desenvolvimento do Estado.
+
+Visão
+
+Ser um órgão gestor ambiental de referência, exercendo um papel estratégico na agenda de desenvolvimento do Estado do Rio de Janeiro, com quadro funcional qualificado e valorizado, 
+credibilidade e atuação descentralizada.
+
+Valores
+
+Ética; valorização do servidor; integração; efetividade; transparência; respeito à sociedade; e sustentabilidade.

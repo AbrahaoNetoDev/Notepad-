@@ -1,0 +1,1190 @@
+USE [master]
+GO
+/****** Object:  Database [ACS]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE DATABASE [ACS] ON  PRIMARY 
+( NAME = N'ACS', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\ACS.mdf' , SIZE = 10451968KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'ACS_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\ACS.ldf' , SIZE = 47616KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [ACS] SET COMPATIBILITY_LEVEL = 100
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [ACS].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [ACS] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [ACS] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [ACS] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [ACS] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [ACS] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [ACS] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [ACS] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [ACS] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [ACS] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [ACS] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [ACS] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [ACS] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [ACS] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [ACS] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [ACS] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [ACS] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [ACS] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [ACS] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [ACS] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [ACS] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [ACS] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [ACS] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [ACS] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [ACS] SET  MULTI_USER 
+GO
+ALTER DATABASE [ACS] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [ACS] SET DB_CHAINING OFF 
+GO
+USE [ACS]
+GO
+/****** Object:  User [ZBB_DEV_DB]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [ZBB_DEV_DB] FOR LOGIN [ZBB_DEV_DB] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [Smart_DEV_DB]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [Smart_DEV_DB] FOR LOGIN [Smart_DEV_DB] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [PortalTI-Test]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [PortalTI-Test] FOR LOGIN [PortalTI-Test] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [PortalTI_DEV_DB]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [PortalTI_DEV_DB] FOR LOGIN [PortalTI_DEV_DB] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [NT AUTHORITY\SYSTEM]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [NT AUTHORITY\SYSTEM] FOR LOGIN [NT AUTHORITY\SYSTEM] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [NSNSERVICES\vanessa.barbosa]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [NSNSERVICES\vanessa.barbosa] FOR LOGIN [NSNSERVICES\vanessa.barbosa] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [NSNSERVICES\nsn.wkm]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [NSNSERVICES\nsn.wkm] FOR LOGIN [NSNSERVICES\nsn.wkm] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [NSNSERVICES\nsn.admin2]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [NSNSERVICES\nsn.admin2] FOR LOGIN [NSNSERVICES\nsn.admin2] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [NSNSERVICES\nsn.admin]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [NSNSERVICES\nsn.admin] FOR LOGIN [NSNSERVICES\nsn.admin] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [NSNSERVICES\marcelo.matos]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [NSNSERVICES\marcelo.matos] FOR LOGIN [NSNSERVICES\marcelo.matos] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [NSNSERVICES\eduardo.martins]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [NSNSERVICES\eduardo.martins] FOR LOGIN [NSNSERVICES\eduardo.martins] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [NSNSERVICES\Dev-Debug]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [NSNSERVICES\Dev-Debug] FOR LOGIN [NSNSERVICES\Dev-Debug]
+GO
+/****** Object:  User [NSNSERVICES\dagos.rosa]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [NSNSERVICES\dagos.rosa] FOR LOGIN [NSNSERVICES\dagos.rosa] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [NSNSERVICES\Architect]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [NSNSERVICES\Architect] FOR LOGIN [NSNSERVICES\Architect]
+GO
+/****** Object:  User [NSNSERVICES\ACS_Developers]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [NSNSERVICES\ACS_Developers] FOR LOGIN [NSNSERVICES\ACS_Developers]
+GO
+/****** Object:  User [linked_portalti]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [linked_portalti] WITHOUT LOGIN WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [HwsTools_DEV_DB]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [HwsTools_DEV_DB] FOR LOGIN [HwsTools_DEV_DB] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [ACS_DEV_DB]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE USER [ACS_DEV_DB] FOR LOGIN [ACS_DEV_DB] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  DatabaseRole [AppUserPermission]    Script Date: 04/07/2022 15:09:04 ******/
+CREATE ROLE [AppUserPermission]
+GO
+sys.sp_addrolemember @rolename = N'db_datareader', @membername = N'ZBB_DEV_DB'
+GO
+sys.sp_addrolemember @rolename = N'db_datawriter', @membername = N'ZBB_DEV_DB'
+GO
+sys.sp_addrolemember @rolename = N'db_datareader', @membername = N'Smart_DEV_DB'
+GO
+sys.sp_addrolemember @rolename = N'db_owner', @membername = N'PortalTI-Test'
+GO
+sys.sp_addrolemember @rolename = N'db_datareader', @membername = N'PortalTI_DEV_DB'
+GO
+sys.sp_addrolemember @rolename = N'db_datawriter', @membername = N'PortalTI_DEV_DB'
+GO
+sys.sp_addrolemember @rolename = N'db_owner', @membername = N'NT AUTHORITY\SYSTEM'
+GO
+sys.sp_addrolemember @rolename = N'db_datareader', @membername = N'NSNSERVICES\vanessa.barbosa'
+GO
+sys.sp_addrolemember @rolename = N'db_datareader', @membername = N'NSNSERVICES\nsn.wkm'
+GO
+sys.sp_addrolemember @rolename = N'db_owner', @membername = N'NSNSERVICES\nsn.admin2'
+GO
+sys.sp_addrolemember @rolename = N'db_backupoperator', @membername = N'NSNSERVICES\nsn.admin2'
+GO
+sys.sp_addrolemember @rolename = N'db_datareader', @membername = N'NSNSERVICES\nsn.admin2'
+GO
+sys.sp_addrolemember @rolename = N'db_backupoperator', @membername = N'NSNSERVICES\nsn.admin'
+GO
+sys.sp_addrolemember @rolename = N'db_datareader', @membername = N'NSNSERVICES\nsn.admin'
+GO
+sys.sp_addrolemember @rolename = N'AppUserPermission', @membername = N'NSNSERVICES\marcelo.matos'
+GO
+sys.sp_addrolemember @rolename = N'db_accessadmin', @membername = N'NSNSERVICES\marcelo.matos'
+GO
+sys.sp_addrolemember @rolename = N'db_ddladmin', @membername = N'NSNSERVICES\marcelo.matos'
+GO
+sys.sp_addrolemember @rolename = N'db_backupoperator', @membername = N'NSNSERVICES\marcelo.matos'
+GO
+sys.sp_addrolemember @rolename = N'AppUserPermission', @membername = N'NSNSERVICES\eduardo.martins'
+GO
+sys.sp_addrolemember @rolename = N'db_accessadmin', @membername = N'NSNSERVICES\eduardo.martins'
+GO
+sys.sp_addrolemember @rolename = N'db_ddladmin', @membername = N'NSNSERVICES\eduardo.martins'
+GO
+sys.sp_addrolemember @rolename = N'db_backupoperator', @membername = N'NSNSERVICES\eduardo.martins'
+GO
+sys.sp_addrolemember @rolename = N'db_datareader', @membername = N'NSNSERVICES\Dev-Debug'
+GO
+sys.sp_addrolemember @rolename = N'db_datawriter', @membername = N'NSNSERVICES\Dev-Debug'
+GO
+sys.sp_addrolemember @rolename = N'AppUserPermission', @membername = N'NSNSERVICES\dagos.rosa'
+GO
+sys.sp_addrolemember @rolename = N'db_accessadmin', @membername = N'NSNSERVICES\dagos.rosa'
+GO
+sys.sp_addrolemember @rolename = N'db_ddladmin', @membername = N'NSNSERVICES\dagos.rosa'
+GO
+sys.sp_addrolemember @rolename = N'db_datareader', @membername = N'NSNSERVICES\dagos.rosa'
+GO
+sys.sp_addrolemember @rolename = N'db_datawriter', @membername = N'NSNSERVICES\dagos.rosa'
+GO
+sys.sp_addrolemember @rolename = N'db_ddladmin', @membername = N'NSNSERVICES\Architect'
+GO
+sys.sp_addrolemember @rolename = N'db_datareader', @membername = N'NSNSERVICES\Architect'
+GO
+sys.sp_addrolemember @rolename = N'db_datawriter', @membername = N'NSNSERVICES\Architect'
+GO
+sys.sp_addrolemember @rolename = N'db_ddladmin', @membername = N'NSNSERVICES\ACS_Developers'
+GO
+sys.sp_addrolemember @rolename = N'db_backupoperator', @membername = N'NSNSERVICES\ACS_Developers'
+GO
+sys.sp_addrolemember @rolename = N'db_datareader', @membername = N'NSNSERVICES\ACS_Developers'
+GO
+sys.sp_addrolemember @rolename = N'db_datawriter', @membername = N'NSNSERVICES\ACS_Developers'
+GO
+sys.sp_addrolemember @rolename = N'db_datareader', @membername = N'linked_portalti'
+GO
+sys.sp_addrolemember @rolename = N'db_datareader', @membername = N'HwsTools_DEV_DB'
+GO
+sys.sp_addrolemember @rolename = N'AppUserPermission', @membername = N'ACS_DEV_DB'
+GO
+/****** Object:  Schema [core]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE SCHEMA [core]
+GO
+/****** Object:  Synonym [core].[SmartProjects]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE SYNONYM [core].[SmartProjects] FOR [smart].[dbo].[TBL_Project]
+GO
+/****** Object:  Synonym [dbo].[Applications]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE SYNONYM [dbo].[Applications] FOR [PortalTI].[dbo].[Applications]
+GO
+/****** Object:  Synonym [dbo].[EmployeeStatuses]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE SYNONYM [dbo].[EmployeeStatuses] FOR [PortalTI].[dbo].[EmployeeStatuses]
+GO
+/****** Object:  Synonym [dbo].[Memberships]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE SYNONYM [dbo].[Memberships] FOR [PortalTI].[dbo].[Memberships]
+GO
+/****** Object:  Synonym [dbo].[Roles]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE SYNONYM [dbo].[Roles] FOR [PortalTI].[dbo].[Roles]
+GO
+/****** Object:  Synonym [dbo].[Users]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE SYNONYM [dbo].[Users] FOR [PortalTI].[dbo].[Users]
+GO
+/****** Object:  Synonym [dbo].[UsersInRoles]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE SYNONYM [dbo].[UsersInRoles] FOR [PortalTI].[dbo].[UsersInRoles]
+GO
+/****** Object:  UserDefinedFunction [dbo].[GetUserContext]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE FUNCTION [dbo].[GetUserContext] ()
+RETURNS VARCHAR(128)
+AS
+BEGIN
+    RETURN COALESCE(CONVERT(VARCHAR(128), CONTEXT_INFO()), SUSER_NAME())
+END
+
+GO
+/****** Object:  Table [core].[Application]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[Application](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](100) NOT NULL,
+	[Initials] [varchar](10) NOT NULL,
+	[IsActive] [bit] NOT NULL,
+	[DtRegister] [datetime] NOT NULL,
+ CONSTRAINT [PK_Application] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[Applications]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[Applications](
+	[ApplicationId] [uniqueidentifier] NOT NULL,
+	[ApplicationName] [nvarchar](235) NOT NULL,
+	[Description] [nvarchar](256) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ApplicationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[Cities]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[Cities](
+	[Id] [int] NOT NULL,
+	[StateId] [int] NOT NULL,
+	[Name] [nvarchar](60) NOT NULL,
+	[IsCapital] [bit] NULL,
+ CONSTRAINT [PK_Cities] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[Countries]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[Countries](
+	[Id] [int] NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[Acronyme] [nvarchar](5) NOT NULL,
+ CONSTRAINT [PK_Countries] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[EmailTemplates]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[EmailTemplates](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[EmailTemplateTypeId] [int] NOT NULL,
+	[Html] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_EmailTemplates] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [core].[EmailTemplateTypes]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[EmailTemplateTypes](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Type] [nvarchar](100) NOT NULL,
+ CONSTRAINT [PK_EmailTemplateTypes] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[Employees]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[Employees](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](200) NOT NULL,
+	[NsnId] [nvarchar](30) NOT NULL,
+	[Email] [nvarchar](255) NOT NULL,
+	[IsActive] [bit] NOT NULL,
+	[UserName] [nvarchar](255) NULL,
+	[IsTechnicianRepair] [bit] NULL,
+	[Crea] [nvarchar](50) NULL,
+	[StateIdCrea] [int] NULL,
+	[UserId] [int] NOT NULL,
+	[DateRegister] [datetime] NOT NULL,
+ CONSTRAINT [PK_Employees] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[EmployeeStatuses]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[EmployeeStatuses](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Code] [varchar](20) NOT NULL,
+	[Description] [varchar](200) NOT NULL,
+ CONSTRAINT [PK_EmployeeStatuses] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[EmployeeTypes]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[EmployeeTypes](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_EmployeeTypes] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[ForgotPasswordCredentials]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[ForgotPasswordCredentials](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Username] [nvarchar](50) NOT NULL,
+	[Token] [nvarchar](200) NOT NULL,
+	[ExpirationDate] [datetime2](0) NOT NULL,
+	[Application] [nvarchar](20) NOT NULL,
+ CONSTRAINT [PK_ForgotPasswordCredentials] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[Functionality]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[Functionality](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ApplicationId] [int] NOT NULL,
+	[GroupFunctionalityId] [int] NULL,
+	[Name] [varchar](100) NOT NULL,
+	[Description] [varchar](500) NOT NULL,
+	[IsActive] [bit] NOT NULL,
+	[DtRegister] [datetime] NOT NULL,
+ CONSTRAINT [PK_Functionality] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[GroupFunctionality]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[GroupFunctionality](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](100) NOT NULL,
+	[Description] [varchar](500) NOT NULL,
+ CONSTRAINT [PK_GroupFunctionality] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[HST_LoginsUsers]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[HST_LoginsUsers](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[DtRegisterHst] [datetime] NOT NULL,
+	[ApplicationId] [int] NOT NULL,
+	[UserId] [int] NOT NULL,
+	[FailedPasswordAttemptCount] [int] NOT NULL,
+	[DtLastLogin] [datetime] NOT NULL,
+	[IsLockedOut] [bit] NOT NULL,
+ CONSTRAINT [PK_HST_LoginsUsers_1] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[LOG_Employees]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[LOG_Employees](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[EmployeeId] [int] NOT NULL,
+	[Name] [nvarchar](200) NOT NULL,
+	[NsnId] [nvarchar](30) NOT NULL,
+	[Email] [nvarchar](255) NOT NULL,
+	[IsActive] [bit] NOT NULL,
+	[UserName] [nvarchar](255) NULL,
+	[IsTechnicianRepair] [bit] NULL,
+	[Crea] [nvarchar](50) NULL,
+	[StateIdCrea] [int] NULL,
+	[UserId] [int] NOT NULL,
+	[DateRegister] [datetime] NOT NULL,
+	[TypeLog] [nchar](1) NOT NULL,
+	[UserIdLog] [int] NOT NULL,
+	[DateLog] [datetime] NOT NULL,
+ CONSTRAINT [PK_LOG_Employees] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[LOG_Functionality]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[LOG_Functionality](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[DtRegisterLog] [datetime] NOT NULL,
+	[ActionLog] [char](1) NOT NULL,
+	[AppName] [varchar](100) NOT NULL,
+	[HostName] [varchar](100) NOT NULL,
+	[SystemUser] [varchar](128) NOT NULL,
+	[FunctionalityId] [int] NOT NULL,
+	[ApplicationId] [int] NOT NULL,
+	[ApplicationIdOld] [int] NULL,
+	[GroupFunctionalityId] [int] NULL,
+	[GroupFunctionalityIdOld] [int] NULL,
+	[Name] [varchar](100) NOT NULL,
+	[NameOld] [varchar](100) NULL,
+	[Description] [varchar](500) NOT NULL,
+	[DescriptionOld] [varchar](500) NULL,
+	[IsActive] [bit] NOT NULL,
+	[IsActiveOld] [bit] NULL,
+ CONSTRAINT [PK_LOG_Functionality] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[LOG_Menu]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[LOG_Menu](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[DtRegisterLog] [datetime] NOT NULL,
+	[ActionLog] [char](1) NOT NULL,
+	[AppName] [varchar](100) NOT NULL,
+	[HostName] [varchar](100) NOT NULL,
+	[SystemUser] [varchar](128) NOT NULL,
+	[MenuId] [int] NOT NULL,
+	[ApplicationId] [int] NOT NULL,
+	[ApplicationIdOld] [int] NULL,
+	[SubMenuId] [int] NULL,
+	[SubMenuIdOld] [int] NULL,
+	[FunctionalityId] [int] NULL,
+	[FunctionalityIdOld] [int] NULL,
+	[Level] [int] NOT NULL,
+	[LevelOld] [int] NULL,
+	[OrderBy] [int] NOT NULL,
+	[OrderByOld] [int] NULL,
+	[DisplayNamePT] [varchar](200) NOT NULL,
+	[DisplayNamePTOld] [varchar](200) NULL,
+	[URL] [varchar](300) NOT NULL,
+	[URLOld] [varchar](300) NULL,
+	[Description] [varchar](500) NULL,
+	[DescriptionOld] [varchar](500) NULL,
+	[IsActive] [bit] NOT NULL,
+	[IsActiveOld] [bit] NULL,
+ CONSTRAINT [PK_LOG_Menu] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[LOG_Permission]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[LOG_Permission](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[DtRegisterLog] [datetime] NOT NULL,
+	[ActionLog] [char](1) NOT NULL,
+	[AppName] [varchar](100) NOT NULL,
+	[HostName] [varchar](100) NOT NULL,
+	[SystemUser] [varchar](128) NOT NULL,
+	[PermissionId] [int] NOT NULL,
+	[FunctionalityId] [int] NOT NULL,
+	[FunctionalityIdOld] [int] NULL,
+	[Name] [varchar](50) NOT NULL,
+	[NameOld] [varchar](50) NULL,
+	[Description] [varchar](500) NOT NULL,
+	[DescriptionOld] [varchar](500) NULL,
+	[Code] [varchar](50) NOT NULL,
+	[CodeOld] [varchar](50) NULL,
+ CONSTRAINT [PK_LOG_Permission] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[LOG_Profile]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[LOG_Profile](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[DtRegisterLog] [datetime] NOT NULL,
+	[ActionLog] [char](1) NOT NULL,
+	[AppName] [varchar](100) NOT NULL,
+	[HostName] [varchar](100) NOT NULL,
+	[SystemUser] [varchar](128) NOT NULL,
+	[ProfileId] [int] NOT NULL,
+	[ApplicationId] [int] NOT NULL,
+	[ApplicationIdOld] [int] NULL,
+	[Name] [varchar](100) NOT NULL,
+	[NameOld] [varchar](100) NULL,
+	[Description] [varchar](500) NOT NULL,
+	[DescriptionOld] [varchar](500) NULL,
+ CONSTRAINT [PK_LOG_Profile] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[LOG_ProfilePermission]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[LOG_ProfilePermission](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[DtRegisterLog] [datetime] NOT NULL,
+	[ActionLog] [char](1) NOT NULL,
+	[AppName] [varchar](100) NOT NULL,
+	[HostName] [varchar](100) NOT NULL,
+	[SystemUser] [varchar](128) NOT NULL,
+	[ProfileId] [int] NOT NULL,
+	[ProfileIdOld] [int] NULL,
+	[PermissionId] [int] NOT NULL,
+	[PermissionIdOld] [int] NULL,
+ CONSTRAINT [PK_LOG_ProfilePermission] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[LOG_ProfileUser]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[LOG_ProfileUser](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[DtRegisterLog] [datetime] NOT NULL,
+	[ActionLog] [char](1) NOT NULL,
+	[AppName] [varchar](100) NOT NULL,
+	[HostName] [varchar](100) NOT NULL,
+	[SystemUser] [varchar](128) NOT NULL,
+	[ProfileId] [int] NOT NULL,
+	[ProfileIdOld] [int] NULL,
+	[UserId] [int] NOT NULL,
+	[UserIdOld] [int] NULL,
+ CONSTRAINT [PK_LOG_ProfileUser] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[LOG_ProjectProfileUser]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[LOG_ProjectProfileUser](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[DtRegisterLog] [datetime] NOT NULL,
+	[ActionLog] [char](1) NOT NULL,
+	[AppName] [varchar](100) NOT NULL,
+	[HostName] [varchar](100) NOT NULL,
+	[SystemUser] [varchar](128) NOT NULL,
+	[UserId] [int] NULL,
+	[ProfileId] [int] NULL,
+	[ProjectId] [int] NULL,
+	[UserIdOld] [int] NULL,
+	[ProfileIdOld] [int] NULL,
+	[ProjectIdOld] [int] NULL,
+ CONSTRAINT [PK_LOG_ProjectProfileUser] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[LOG_SystemExceptions]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[LOG_SystemExceptions](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ApplicationId] [int] NOT NULL,
+	[Message] [varchar](500) NOT NULL,
+	[StackTrace] [varchar](max) NOT NULL,
+	[HostName] [varchar](200) NOT NULL,
+	[SystemUser] [varchar](200) NOT NULL,
+	[Browser] [varchar](200) NOT NULL,
+	[DtRegister] [datetime] NOT NULL,
+ CONSTRAINT [PK_Skills] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [core].[LOG_User]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[LOG_User](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[DtRegisterLog] [datetime] NOT NULL,
+	[ActionLog] [char](1) NOT NULL,
+	[AppName] [varchar](100) NOT NULL,
+	[HostName] [varchar](100) NOT NULL,
+	[SystemUser] [varchar](128) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[EmployeeId] [int] NOT NULL,
+	[UserCode] [uniqueidentifier] NOT NULL,
+	[UserCodeOld] [uniqueidentifier] NULL,
+	[UserName] [varchar](50) NOT NULL,
+	[UserNameOld] [varchar](50) NULL,
+	[Password] [varchar](128) NOT NULL,
+	[PasswordOld] [varchar](128) NULL,
+	[PasswordSalt] [varchar](128) NOT NULL,
+	[PasswordSaltOld] [varchar](128) NULL,
+	[DtRegister] [datetime] NOT NULL,
+	[DtRegisterOld] [datetime] NULL,
+	[DtLastPasswordChanged] [datetime] NULL,
+	[DtLastPasswordChangedOld] [datetime] NULL,
+	[IsActive] [bit] NOT NULL,
+	[IsActiveOld] [bit] NULL,
+	[Timezone] [varchar](100) NOT NULL,
+	[TimezoneOld] [varchar](100) NULL,
+	[DtExpirePassword] [datetime] NULL,
+	[DtExpirePasswordOld] [datetime] NULL,
+ CONSTRAINT [PK_LOG_User] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[LoginsUsers]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[LoginsUsers](
+	[ApplicationId] [int] NOT NULL,
+	[UserId] [int] NOT NULL,
+	[FailedPasswordAttemptCount] [int] NOT NULL,
+	[DtLastLogin] [datetime] NULL,
+	[IsLockedOut] [bit] NOT NULL,
+ CONSTRAINT [PK_LoginsUsers] PRIMARY KEY CLUSTERED 
+(
+	[ApplicationId] ASC,
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[Menu]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[Menu](
+	[Id] [int] NOT NULL,
+	[ApplicationId] [int] NOT NULL,
+	[SubMenuId] [int] NULL,
+	[FunctionalityId] [int] NULL,
+	[Level] [int] NOT NULL,
+	[OrderBy] [int] NOT NULL,
+	[DisplayNamePT] [varchar](200) NOT NULL,
+	[DisplayNameEN] [varchar](200) NOT NULL,
+	[URL] [varchar](300) NOT NULL,
+	[Description] [varchar](500) NULL,
+	[IsActive] [bit] NOT NULL,
+ CONSTRAINT [PK_Menu] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[Permission]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[Permission](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[FunctionalityId] [int] NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[Description] [varchar](500) NOT NULL,
+	[Code] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Permission] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[Profile]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[Profile](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ApplicationId] [int] NOT NULL,
+	[Name] [varchar](100) NOT NULL,
+	[Description] [varchar](500) NOT NULL,
+	[DtRegister] [datetime] NOT NULL,
+ CONSTRAINT [PK_Profile] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[ProfilePermission]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[ProfilePermission](
+	[ProfileId] [int] NOT NULL,
+	[PermissionId] [int] NOT NULL,
+ CONSTRAINT [PK_ProfilePermission] PRIMARY KEY CLUSTERED 
+(
+	[ProfileId] ASC,
+	[PermissionId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[ProfileUser]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[ProfileUser](
+	[ProfileId] [int] NOT NULL,
+	[UserId] [int] NOT NULL,
+ CONSTRAINT [PK_ProfileUser] PRIMARY KEY CLUSTERED 
+(
+	[ProfileId] ASC,
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[ProjectProfileUser]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[ProjectProfileUser](
+	[UserId] [int] NOT NULL,
+	[ProfileId] [int] NOT NULL,
+	[ProjectId] [smallint] NOT NULL,
+ CONSTRAINT [PK_ProjectProfileUser] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC,
+	[ProfileId] ASC,
+	[ProjectId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[States]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[States](
+	[Id] [int] NOT NULL,
+	[CountryId] [int] NOT NULL,
+	[Name] [nvarchar](60) NOT NULL,
+	[Acronyme] [nchar](2) NOT NULL,
+ CONSTRAINT [PK_States] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[Timezones]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[Timezones](
+	[Id] [int] NOT NULL,
+	[Timezone] [varchar](200) NOT NULL,
+	[UTC] [decimal](5, 2) NOT NULL,
+	[Description] [varchar](200) NOT NULL,
+	[CountryId] [int] NOT NULL,
+ CONSTRAINT [PK_Timezones] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[User]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[User](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[EmployeeId] [int] NOT NULL,
+	[UserCode] [uniqueidentifier] NOT NULL,
+	[UserName] [varchar](255) NULL,
+	[Password] [varchar](128) NOT NULL,
+	[PasswordSalt] [varchar](128) NOT NULL,
+	[DtRegister] [datetime] NOT NULL,
+	[DtLastPasswordChanged] [datetime] NULL,
+	[IsActive] [bit] NOT NULL,
+	[Timezone] [varchar](100) NULL,
+	[TimezoneId] [int] NULL,
+	[DtExpirePassword] [datetime] NULL,
+	[LastDeadLinePasswordExpired] [int] NULL,
+ CONSTRAINT [PK_User_1] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+ CONSTRAINT [CK_User_username] UNIQUE NONCLUSTERED 
+(
+	[UserName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [core].[UserChangePasswordHistory]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [core].[UserChangePasswordHistory](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[DtRegister] [datetime] NOT NULL,
+	[Password] [varchar](128) NOT NULL,
+	[PasswordSalt] [varchar](128) NULL,
+ CONSTRAINT [PK_UserChangePasswordHistory] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [IX_Application_01]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [IX_Application_01] ON [core].[Application]
+(
+	[Name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [IX_Functionality_01]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE NONCLUSTERED INDEX [IX_Functionality_01] ON [core].[Functionality]
+(
+	[Name] ASC,
+	[ApplicationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [IX_GroupFunctionality_01]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [IX_GroupFunctionality_01] ON [core].[GroupFunctionality]
+(
+	[Name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [IX_Permission_01]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [IX_Permission_01] ON [core].[Permission]
+(
+	[FunctionalityId] ASC,
+	[Name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [IX_Permission_02]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [IX_Permission_02] ON [core].[Permission]
+(
+	[Code] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [IX_Profile]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [IX_Profile] ON [core].[Profile]
+(
+	[ApplicationId] ASC,
+	[Name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [IX_User_1]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [IX_User_1] ON [core].[User]
+(
+	[UserName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_User_2]    Script Date: 04/07/2022 15:09:06 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [IX_User_2] ON [core].[User]
+(
+	[UserCode] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE [core].[Application] ADD  CONSTRAINT [DF_Application_IsActived]  DEFAULT ((1)) FOR [IsActive]
+GO
+ALTER TABLE [core].[Functionality] ADD  CONSTRAINT [DF_Functionality_IsActived]  DEFAULT ((1)) FOR [IsActive]
+GO
+ALTER TABLE [core].[Menu] ADD  CONSTRAINT [DF_Menu_IsActived]  DEFAULT ((1)) FOR [IsActive]
+GO
+ALTER TABLE [core].[User] ADD  CONSTRAINT [DF_User_IsActived]  DEFAULT ((1)) FOR [IsActive]
+GO
+ALTER TABLE [core].[Cities]  WITH CHECK ADD  CONSTRAINT [FK_Cities_States] FOREIGN KEY([StateId])
+REFERENCES [core].[States] ([Id])
+GO
+ALTER TABLE [core].[Cities] CHECK CONSTRAINT [FK_Cities_States]
+GO
+ALTER TABLE [core].[EmailTemplates]  WITH CHECK ADD  CONSTRAINT [FK_EmailTemplates_EmailTemplateTypes] FOREIGN KEY([EmailTemplateTypeId])
+REFERENCES [core].[EmailTemplateTypes] ([Id])
+GO
+ALTER TABLE [core].[EmailTemplates] CHECK CONSTRAINT [FK_EmailTemplates_EmailTemplateTypes]
+GO
+ALTER TABLE [core].[Employees]  WITH CHECK ADD  CONSTRAINT [FK_Employee_States_Id] FOREIGN KEY([StateIdCrea])
+REFERENCES [core].[States] ([Id])
+GO
+ALTER TABLE [core].[Employees] CHECK CONSTRAINT [FK_Employee_States_Id]
+GO
+ALTER TABLE [core].[Employees]  WITH CHECK ADD  CONSTRAINT [FK_Employee_User_Id] FOREIGN KEY([UserId])
+REFERENCES [core].[User] ([Id])
+GO
+ALTER TABLE [core].[Employees] CHECK CONSTRAINT [FK_Employee_User_Id]
+GO
+ALTER TABLE [core].[Functionality]  WITH CHECK ADD  CONSTRAINT [FK_Functionality_Application] FOREIGN KEY([ApplicationId])
+REFERENCES [core].[Application] ([Id])
+GO
+ALTER TABLE [core].[Functionality] CHECK CONSTRAINT [FK_Functionality_Application]
+GO
+ALTER TABLE [core].[Functionality]  WITH CHECK ADD  CONSTRAINT [FK_Functionality_GroupFunctionality] FOREIGN KEY([GroupFunctionalityId])
+REFERENCES [core].[GroupFunctionality] ([Id])
+GO
+ALTER TABLE [core].[Functionality] CHECK CONSTRAINT [FK_Functionality_GroupFunctionality]
+GO
+ALTER TABLE [core].[LOG_SystemExceptions]  WITH CHECK ADD  CONSTRAINT [FK_SystemExceptions_Application] FOREIGN KEY([ApplicationId])
+REFERENCES [core].[Application] ([Id])
+GO
+ALTER TABLE [core].[LOG_SystemExceptions] CHECK CONSTRAINT [FK_SystemExceptions_Application]
+GO
+ALTER TABLE [core].[LoginsUsers]  WITH CHECK ADD  CONSTRAINT [FK_ApplicationsUsers_Application] FOREIGN KEY([ApplicationId])
+REFERENCES [core].[Application] ([Id])
+GO
+ALTER TABLE [core].[LoginsUsers] CHECK CONSTRAINT [FK_ApplicationsUsers_Application]
+GO
+ALTER TABLE [core].[LoginsUsers]  WITH CHECK ADD  CONSTRAINT [FK_ApplicationsUsers_User] FOREIGN KEY([UserId])
+REFERENCES [core].[User] ([Id])
+GO
+ALTER TABLE [core].[LoginsUsers] CHECK CONSTRAINT [FK_ApplicationsUsers_User]
+GO
+ALTER TABLE [core].[Menu]  WITH CHECK ADD  CONSTRAINT [FK_Menu_Application] FOREIGN KEY([ApplicationId])
+REFERENCES [core].[Application] ([Id])
+GO
+ALTER TABLE [core].[Menu] CHECK CONSTRAINT [FK_Menu_Application]
+GO
+ALTER TABLE [core].[Menu]  WITH CHECK ADD  CONSTRAINT [FK_Menu_Functionality] FOREIGN KEY([FunctionalityId])
+REFERENCES [core].[Functionality] ([Id])
+GO
+ALTER TABLE [core].[Menu] CHECK CONSTRAINT [FK_Menu_Functionality]
+GO
+ALTER TABLE [core].[Menu]  WITH CHECK ADD  CONSTRAINT [FK_Menu_Menu] FOREIGN KEY([SubMenuId])
+REFERENCES [core].[Menu] ([Id])
+GO
+ALTER TABLE [core].[Menu] CHECK CONSTRAINT [FK_Menu_Menu]
+GO
+ALTER TABLE [core].[Permission]  WITH CHECK ADD  CONSTRAINT [FK_Permission_Functionality] FOREIGN KEY([FunctionalityId])
+REFERENCES [core].[Functionality] ([Id])
+GO
+ALTER TABLE [core].[Permission] CHECK CONSTRAINT [FK_Permission_Functionality]
+GO
+ALTER TABLE [core].[Profile]  WITH CHECK ADD  CONSTRAINT [FK_Profile_Application] FOREIGN KEY([ApplicationId])
+REFERENCES [core].[Application] ([Id])
+GO
+ALTER TABLE [core].[Profile] CHECK CONSTRAINT [FK_Profile_Application]
+GO
+ALTER TABLE [core].[ProfilePermission]  WITH CHECK ADD  CONSTRAINT [FK_ProfilePermission_Permission] FOREIGN KEY([PermissionId])
+REFERENCES [core].[Permission] ([Id])
+GO
+ALTER TABLE [core].[ProfilePermission] CHECK CONSTRAINT [FK_ProfilePermission_Permission]
+GO
+ALTER TABLE [core].[ProfilePermission]  WITH CHECK ADD  CONSTRAINT [FK_ProfilePermission_Profile] FOREIGN KEY([ProfileId])
+REFERENCES [core].[Profile] ([Id])
+GO
+ALTER TABLE [core].[ProfilePermission] CHECK CONSTRAINT [FK_ProfilePermission_Profile]
+GO
+ALTER TABLE [core].[ProfileUser]  WITH CHECK ADD  CONSTRAINT [FK_ProfileUser_Profile] FOREIGN KEY([ProfileId])
+REFERENCES [core].[Profile] ([Id])
+GO
+ALTER TABLE [core].[ProfileUser] CHECK CONSTRAINT [FK_ProfileUser_Profile]
+GO
+ALTER TABLE [core].[ProfileUser]  WITH CHECK ADD  CONSTRAINT [FK_ProfileUser_User] FOREIGN KEY([UserId])
+REFERENCES [core].[User] ([Id])
+GO
+ALTER TABLE [core].[ProfileUser] CHECK CONSTRAINT [FK_ProfileUser_User]
+GO
+ALTER TABLE [core].[ProjectProfileUser]  WITH CHECK ADD  CONSTRAINT [FK_ProjectProfileUser_Profile] FOREIGN KEY([ProfileId])
+REFERENCES [core].[Profile] ([Id])
+GO
+ALTER TABLE [core].[ProjectProfileUser] CHECK CONSTRAINT [FK_ProjectProfileUser_Profile]
+GO
+ALTER TABLE [core].[ProjectProfileUser]  WITH CHECK ADD  CONSTRAINT [FK_ProjectProfileUser_User] FOREIGN KEY([UserId])
+REFERENCES [core].[User] ([Id])
+GO
+ALTER TABLE [core].[ProjectProfileUser] CHECK CONSTRAINT [FK_ProjectProfileUser_User]
+GO
+ALTER TABLE [core].[States]  WITH CHECK ADD  CONSTRAINT [FK_States_Countries] FOREIGN KEY([CountryId])
+REFERENCES [core].[Countries] ([Id])
+GO
+ALTER TABLE [core].[States] CHECK CONSTRAINT [FK_States_Countries]
+GO
+ALTER TABLE [core].[Timezones]  WITH CHECK ADD  CONSTRAINT [FK_Timezones_Countries] FOREIGN KEY([CountryId])
+REFERENCES [core].[Countries] ([Id])
+GO
+ALTER TABLE [core].[Timezones] CHECK CONSTRAINT [FK_Timezones_Countries]
+GO
+ALTER TABLE [core].[User]  WITH CHECK ADD  CONSTRAINT [FK_User_Employees] FOREIGN KEY([EmployeeId])
+REFERENCES [core].[Employees] ([Id])
+GO
+ALTER TABLE [core].[User] CHECK CONSTRAINT [FK_User_Employees]
+GO
+ALTER TABLE [core].[User]  WITH CHECK ADD  CONSTRAINT [FK_User_Timezones] FOREIGN KEY([TimezoneId])
+REFERENCES [core].[Timezones] ([Id])
+GO
+ALTER TABLE [core].[User] CHECK CONSTRAINT [FK_User_Timezones]
+GO
+ALTER TABLE [core].[UserChangePasswordHistory]  WITH CHECK ADD  CONSTRAINT [FK_UserChangePasswordHistory_User] FOREIGN KEY([UserId])
+REFERENCES [core].[User] ([Id])
+GO
+ALTER TABLE [core].[UserChangePasswordHistory] CHECK CONSTRAINT [FK_UserChangePasswordHistory_User]
+GO
+/****** Object:  StoredProcedure [dbo].[SetUserContext]    Script Date: 04/07/2022 15:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[SetUserContext]
+    @userName VARCHAR(128)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @context VARBINARY(128)
+    SET @context = CONVERT(BINARY(128), @userName)
+
+    SET CONTEXT_INFO @context
+END
+
+
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Lista de aplicações existentes' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'Application'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'user login' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'ForgotPasswordCredentials', @level2type=N'COLUMN',@level2name=N'Username'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'token generated by the application' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'ForgotPasswordCredentials', @level2type=N'COLUMN',@level2name=N'Token'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'time that the token expires' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'ForgotPasswordCredentials', @level2type=N'COLUMN',@level2name=N'ExpirationDate'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'application that generated the token' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'ForgotPasswordCredentials', @level2type=N'COLUMN',@level2name=N'Application'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'ForgotPasswordCredentials'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Funcionalidade das aplicações. Pode ser uma pagina, uma etapa, uma funcionalidade pontual.' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'Functionality'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Historico de logins dos usuarios' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'HST_LoginsUsers'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Quantidade de erros de login. Zera a cada login com sucesso.' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'LoginsUsers', @level2type=N'COLUMN',@level2name=N'FailedPasswordAttemptCount'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Flag de controle de bloqueio por tentativas erradas de login ou para bloqueio de usuário por nivel de Aplicação' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'LoginsUsers', @level2type=N'COLUMN',@level2name=N'IsLockedOut'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Tabela responsável em armazenar dados de login de usuário para cada aplicação.
+' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'LoginsUsers'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Campo de descrição do MENU que vai ser exibido ao usuário em Portugues.  Para adicionar traduçoes em Ingles e Espanhol adicionar 2 campos com terminação EN e ES' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'Menu', @level2type=N'COLUMN',@level2name=N'DisplayNamePT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Menu da aplicação. Monta dinamicamente o menu. Pode ser um item do menu que não esteja ligado com nenhuma funcionalidade e nesse caso não representa na aplicação nenhuma funcionalidade. Pode ser um item que ao clica abra o Menu por exemplo.' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'Menu'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Campo para armanezar um código para referenciar no codigo fonte a permissão. Esse codigo que vai ser utilizado na programação para referenciar a permissão.' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'Permission', @level2type=N'COLUMN',@level2name=N'Code'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Permissão de acesso para a funcionalidade. Se pode Ler, Alterar, Apagar.' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'Permission'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Tabela com os Grupos de permissão de acesso ao sistema.' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'Profile'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Relacionamento do Grupo de Usuario com funcionalidade do sistemas. Define o que as permissões que o Grupo possui.' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'ProfilePermission'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Relacionamento de grupos com os usuarios. O usuario pode estar em mais de um grupo de permissão.' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'ProfileUser'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Relacionamento de grupos e projeto com os usuarios. O usuario pode estar em mais de um grupo de permissão em diferentes projetos.' , @level0type=N'SCHEMA',@level0name=N'core', @level1type=N'TABLE',@level1name=N'ProjectProfileUser'
+GO
+USE [master]
+GO
+ALTER DATABASE [ACS] SET  READ_WRITE 
+GO

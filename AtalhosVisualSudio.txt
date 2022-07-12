@@ -5,3 +5,5 @@ ctrl + R + G => Para remover as using e coloca em ordem alfabetica.
 ctrl + k + C => Comenta varias linhas ou uma.
 
 ctrl + K + U => Descomenta varias linhas ou uma 
+
+ctrl + D => Duplica a linha
